@@ -70,6 +70,8 @@ Start the React development server: npm start
 Access the Application:
 
 Open your web browser and go to http://localhost:3000 to access the application.
+
+
 Testing
 Backend tests: Use testing frameworks like JUnit or TestNG to write and run tests for your backend services and controllers.
 Frontend tests: Utilize testing libraries like Jest and React Testing Library for unit and integration tests.
