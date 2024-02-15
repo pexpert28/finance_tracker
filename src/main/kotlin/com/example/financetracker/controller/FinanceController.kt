@@ -14,7 +14,7 @@ class FinanceController @Autowired constructor(
     private val financeService: FinanceService
 ) {
 
-    @GetMapping("/balance")
+    @GetMapping("/api/balance")
     fun getBalance(@RequestParam startDate: LocalDate, @RequestParam endDate: LocalDate): ResponseEntity<Double> {
         return try {
             val balance = financeService.calculateBalance(startDate, endDate)
@@ -23,7 +23,7 @@ class FinanceController @Autowired constructor(
             ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(-1.0)
         }
     }
-    @GetMapping("/expense-summary")
+    @GetMapping("/api/expense-summary")
     fun getExpenseSummary(@RequestParam startDate: LocalDate, @RequestParam endDate: LocalDate): ResponseEntity<List<ExpenseSummaryDTO>> {
         return try {
             val expenseSummary = financeService.getExpenseSummaryByCategory(startDate, endDate)
