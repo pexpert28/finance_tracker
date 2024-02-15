@@ -10,9 +10,6 @@ My Finance Tracker is a personal finance tracking application that allows users 
 - [Getting Started](#getting-started)
 - [Testing](#testing)
 - [Deployment](#deployment)
-- [Contributing](#contributing)
-- [License](#license)
-
 ## Features
 
 - **Income and Expenses Tracking:**
@@ -72,6 +69,6 @@ Access the Application:
 Open your web browser and go to http://localhost:3000 to access the application.
 
 
-Testing
+##Testing
 Backend tests: Use testing frameworks like JUnit or TestNG to write and run tests for your backend services and controllers.
 Frontend tests: Utilize testing libraries like Jest and React Testing Library for unit and integration tests.
