@@ -8,6 +8,7 @@ export const ADD_EXPENSE_ENTRY_SUCCESS = 'ADD_EXPENSE_ENTRY_SUCCESS';
 export const EDIT_EXPENSE_ENTRY_SUCCESS = 'EDIT_EXPENSE_ENTRY_SUCCESS';
 export const DELETE_EXPENSE_ENTRY_SUCCESS = 'DELETE_EXPENSE_ENTRY_SUCCESS';
 export const FETCH_BALANCE_SUCCESS = 'FETCH_BALANCE_SUCCESS';
+export const UPDATE_BALANCE_SUCCESS = 'UPDATE_BALANCE_SUCCESS';
 export const FETCH_EXPENSE_SUMMARY_SUCCESS = 'FETCH_EXPENSE_SUMMARY_SUCCESS';
 export const fetchIncomeEntriesSuccess = (entries: any[]) => ({
     type: FETCH_INCOME_ENTRIES_SUCCESS,
@@ -50,6 +51,10 @@ export const deleteExpenseEntrySuccess = (entryId: string) => ({
 });
 export const fetchBalanceSuccess = (balance: number) => ({
     type: FETCH_BALANCE_SUCCESS,
+    payload: balance,
+});
+export const updateBalanceSucess = (balance: number) => ({
+    type: UPDATE_BALANCE_SUCCESS,
     payload: balance,
 });
 

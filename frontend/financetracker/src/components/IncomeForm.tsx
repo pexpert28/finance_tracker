@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
-import { addIncomeEntrySuccess} from '../store/action';
+import { addIncomeEntrySuccess} from '../redux_src/action';
 import { addIncomeEntry } from '../services/api';
 const IncomeForm = ({ addIncomeEntrySuccess }: any) => {
     const [formData, setFormData] = useState({

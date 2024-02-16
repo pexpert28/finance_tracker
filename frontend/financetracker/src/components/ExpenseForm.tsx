@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
-import { addExpenseEntrySuccess} from '../store/action';
+import { addExpenseEntrySuccess} from '../redux_src/action';
 import { addExpenseEntry } from '../services/api';
 const ExpenseForm = ({ addExpenseEntrySuccess }: any) => {
     const [formData, setFormData] = useState({

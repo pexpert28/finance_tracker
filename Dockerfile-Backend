@@ -1,0 +1,7 @@
+FROM openjdk:11-jre-slim
+LABEL authors="Pooya"
+COPY build/libs/financetracker-0.0.1-SNAPSHOT.jar .
+EXPOSE 8080
+
+# Define the command to run your application
+CMD ["java", "-jar", "financetracker-0.0.1-SNAPSHOT.jar"]

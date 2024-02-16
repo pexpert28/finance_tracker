@@ -1,18 +1,23 @@
 import React from 'react';
-import ExpenseList from "./components/ExpenseList";
-import IncomeList from "./components/IncomeList";
-import IncomeForm from "./components/IncomeForm";
-import ExpenseForm from "./components/ExpenseForm";
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Expense from "./components/Expense";
+import Income from "./components/Income";
+import Home from "./components/Home";
+import NavBar from "./components/NavBar";
 import SummaryView from "./components/SummaryView";
 const App: React.FC = () => {
     return (
-        <div>
-            <IncomeForm/>
-            <ExpenseForm />
-            <ExpenseList />
-            <IncomeList />
-            <SummaryView />
-        </div>
+        <Router>
+            <div>
+                <NavBar />
+                <Routes>
+                    <Route path="/" element={<Home/>} />
+                    <Route path="/income" element={<Income/>} />
+                    <Route path="/expense" element={<Expense/>} />
+                    <Route path="/summary"  element={<SummaryView/>} />
+                </Routes>
+            </div>
+        </Router>
     );
 };
 

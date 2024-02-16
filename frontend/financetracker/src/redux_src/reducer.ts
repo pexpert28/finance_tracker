@@ -9,6 +9,7 @@ import {
     EDIT_EXPENSE_ENTRY_SUCCESS,
     DELETE_EXPENSE_ENTRY_SUCCESS,
     FETCH_BALANCE_SUCCESS,
+    UPDATE_BALANCE_SUCCESS,
     FETCH_EXPENSE_SUMMARY_SUCCESS,
 } from './action';
 
@@ -21,7 +22,16 @@ interface Entry {
     description: string;
     // Add any other fields as needed
 }
-
+export interface RootState {
+    balance: number;
+    expenseSummary: { [category: string]: number };
+    incomeSummary: { [category: string]: number };
+}
+const initialState: RootState = {
+    balance: 0,
+    expenseSummary: {},
+    incomeSummary: {},
+};
 const defaultIncomeEntries: Entry[] = [];
 const defaultExpenseEntries: Entry[] = [];
 
@@ -65,10 +75,32 @@ const expenseEntriesReducer = (state = defaultExpenseEntries, action: any) => {
             return state;
     }
 };
+const balanceReducer = (state = initialState.balance, action: any) => {
+    switch (action.type) {
+        case FETCH_BALANCE_SUCCESS:
+            return action.payload;
+        case UPDATE_BALANCE_SUCCESS:
+            return action.payload;
+        default:
+            return state;
+    }
+};
 
+const expenseSummaryReducer = (state = initialState.expenseSummary, action: any) => {
+
+    return state;
+};
+
+const incomeSummaryReducer = (state = initialState.incomeSummary, action: any) => {
+    // Implement logic to update income summary based on income entries
+    return state;
+};
 const rootReducer = combineReducers({
     incomeEntries: incomeEntriesReducer,
     expenseEntries: expenseEntriesReducer,
+    balance: balanceReducer,
+    expenseSummary: expenseSummaryReducer,
+    incomeSummary: incomeSummaryReducer,
 });
 
 export default rootReducer;

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
-import { fetchExpenseEntriesSuccess, deleteExpenseEntrySuccess, editExpenseEntrySuccess } from '../store/action';
+import { fetchExpenseEntriesSuccess, deleteExpenseEntrySuccess, editExpenseEntrySuccess } from '../redux_src/action';
 import { getExpenseEntries, deleteExpenseEntry, updateExpenseEntry } from '../services/api';
 
 interface EditedEntry {
